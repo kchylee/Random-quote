@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="./public/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#getQuote").click(() => {
+                let req = new XMLHttpRequest(),
+                    method = "GET",
+                    url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
+                req.open(method, url, true);
+                req.setRequestHeader("X-Mashape-Key", "rvDRHtqfpxmsh3Vrk3SdZRPd6aUop1lXt5fjsnNrDvbdJnVPhU");
+                req.onreadystatechange = () => {
+                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
+                        console.log(req.responseText);
+                        $("#quote").html(JSON.parse(req.responseText).quote);
+                        
+                        $("#person").html(JSON.parse(req.responseText).author);
+                    }else{
+                        $("#quote").html(req.status);
+                    }
+                };
+                req.send();
+            })
+        })
+    </script>
+</head>
+<body>
+    <section>
+        <button id="getQuote">Someone once said...</button>
+        <p id="quote"></p>
+        <p id="person"></p>        
+    <section>
+</body>
+</html>
