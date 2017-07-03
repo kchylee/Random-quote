@@ -4,10 +4,12 @@
 <head>
     <title>Random Quote Generator</title>
     <link rel="stylesheet" href="./public/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(() => {
             $("#getQuote").click(() => {
+                $("#quote-with-person").css("display", "block");
                 let req = new XMLHttpRequest(),
                     method = "GET",
                     url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
@@ -15,24 +17,30 @@
                 req.setRequestHeader("X-Mashape-Key", "rvDRHtqfpxmsh3Vrk3SdZRPd6aUop1lXt5fjsnNrDvbdJnVPhU");
                 req.onreadystatechange = () => {
                     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                        console.log(req.responseText);
                         $("#quote").html(JSON.parse(req.responseText).quote);
-                        
                         $("#person").html(JSON.parse(req.responseText).author);
                     }else{
                         $("#quote").html(req.status);
                     }
                 };
                 req.send();
+                $("#getPerson").css("display", "block");
+                $("#getPerson").delay(1000).html(" who???");
             })
         })
     </script>
 </head>
 <body>
+    <header>
+        <h1>Someone once said...</h1>
+    </header>
     <section>
-        <button id="getQuote">Someone once said...</button>
-        <p id="quote"></p>
-        <p id="person"></p>        
+        <button id="getQuote">Said what???</button>
+        <div id="quote-with-person">
+            <p id="quote"></p>
+            <p id="person"></p>
+        </div>
+        <button id="getPerson"></button>
     <section>
 </body>
 </html>
