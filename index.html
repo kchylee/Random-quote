@@ -3,13 +3,14 @@
 <meta charset="utf-8">
 <head>
     <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(() => {
             $("#getQuote").click(() => {
-                $("#quote-with-person").css("display", "block");
+                $("#row").css("display", "block");
                 let firstName;
                 let req = new XMLHttpRequest(),
                     method = "GET",
@@ -22,9 +23,7 @@
                         $("#quote").html(resObj.quote);
                         $("#person").html(resObj.author);
                         firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');
-                        console.log(firstName);
-                        // $("#getPerson").css("display", "block");
-                        
+                        console.log(firstName);                        
                         window.setTimeout(()=>{
                             $("#getPerson").css("display", "block").html(firstName + " who???");
                         }, 2000);
@@ -45,10 +44,16 @@
     </header>
     <section>
         <button id="getQuote">Said what???</button>
-        <div id="quote-with-person">
-            <p id="quote"></p>
-            <p id="person"></p>
+        <div class="container">
+            <div class="row" id="row">
+                <div id="space" class="col-sm-6 col-md-6 col-lg-6"></div>    
+                <div id="quote-with-person" class="col-sm-6 col-md-6 col-lg-6">
+                    <p id="quote"></p>
+                    <p id="person"></p>
+                </div>
+            </div>
         </div>
+        
         <button id="getPerson"></button>
     <section>
 </body>

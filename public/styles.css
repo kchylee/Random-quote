@@ -12,6 +12,7 @@ h1 {
 }
 
 #getQuote {
+    display: block;
     border: solid white 0.1em;
     border-radius: 100px;
     background-color: #222;
@@ -30,9 +31,19 @@ h1 {
     color: #cfcfc4;
 }
 
-#quote-with-person {
-    display: none;
+#quote {
+    text-align: left;
+}
+
+#person {
     text-align: right;
+}
+
+#row {
+    display: none;
+}
+
+#quote-with-person {
     border: solid #cfcfc4 0.5em;
     border-radius: 0.5em;
     background-color: #cfcfc4;
