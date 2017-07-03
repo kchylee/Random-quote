@@ -10,6 +10,7 @@
         $(document).ready(() => {
             $("#getQuote").click(() => {
                 $("#quote-with-person").css("display", "block");
+                let firstName;
                 let req = new XMLHttpRequest(),
                     method = "GET",
                     url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
@@ -17,15 +18,23 @@
                 req.setRequestHeader("X-Mashape-Key", "rvDRHtqfpxmsh3Vrk3SdZRPd6aUop1lXt5fjsnNrDvbdJnVPhU");
                 req.onreadystatechange = () => {
                     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                        $("#quote").html(JSON.parse(req.responseText).quote);
-                        $("#person").html(JSON.parse(req.responseText).author);
+                        let resObj = JSON.parse(req.responseText);
+                        $("#quote").html(resObj.quote);
+                        $("#person").html(resObj.author);
+                        firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');
+                        console.log(firstName);
+                        // $("#getPerson").css("display", "block");
+                        
+                        window.setTimeout(()=>{
+                            $("#getPerson").css("display", "block").html(firstName + " who???");
+                        }, 2000);
                     }else{
                         $("#quote").html(req.status);
                     }
                 };
-                req.send();
-                $("#getPerson").css("display", "block");
-                $("#getPerson").delay(1000).html(" who???");
+                req.send()
+                
+                
             })
         })
     </script>
