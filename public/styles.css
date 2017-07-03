@@ -1,10 +1,5 @@
-body {
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
 h1 {
-    border: solid #cfcfc4 0.5em;
+    border: solid #cfcfc4 0.1em;
     border-radius: 0.5em;
     background-color: #cfcfc4;
     font-family: Bungee, sans-serif;
@@ -13,22 +8,26 @@ h1 {
 
 #getQuote {
     display: block;
+    float: right;
     border: solid white 0.1em;
-    border-radius: 100px;
+    border-radius: 0.5em;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
     color: #cfcfc4;
+    outline: none;
 }
 
 #getPerson {
     display: none;
+    float: right;
     border: solid white 0.1em;
-    border-radius: 100px;
+    border-radius: 0.5em;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
     color: #cfcfc4;
+    outline: none;
 }
 
 #quote {
@@ -42,9 +41,8 @@ h1 {
 #row {
     display: none;
 }
-
 #quote-with-person {
-    border: solid #cfcfc4 0.5em;
+    border: solid #cfcfc4 0.1em;
     border-radius: 0.5em;
     background-color: #cfcfc4;
     font-family: Bungee, sans-serif;

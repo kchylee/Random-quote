@@ -22,8 +22,7 @@
                         let resObj = JSON.parse(req.responseText);
                         $("#quote").html(resObj.quote);
                         $("#person").html(resObj.author);
-                        firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');
-                        console.log(firstName);                        
+                        firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');                       
                         window.setTimeout(()=>{
                             $("#getPerson").css("display", "block").html(firstName + " who???");
                         }, 2000);
@@ -32,29 +31,49 @@
                     }
                 };
                 req.send()
-                
-                
+            })
+
+            $("#getPerson").click(() => {
+                let name = document.getElementById("person").innerHTML.replace(/\s/g, "%20");
+                let req = new XMLHttpRequest(),
+                    method = "GET",
+                    url = `https://en.wikipedia.org/w/api.php?action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=100`;
+                req.open(method, url, true);
+                req.onreadystatechange = () => {
+                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
+                        let resObj = JSON.parse(req.responseText).query.pages;
+                        let key = Object.keys(resObj)[0];
+                        $("#description").html("<img src=resObj.key.thumbnail.source><div>resObj.key.terms.description[0]</div>");
+                    }else{
+                        $("#description").html(req.status);
+                    }
+                };
+                req.send()  
             })
         })
     </script>
 </head>
 <body>
-    <header>
-        <h1>Someone once said...</h1>
-    </header>
-    <section>
-        <button id="getQuote">Said what???</button>
-        <div class="container">
-            <div class="row" id="row">
-                <div id="space" class="col-sm-6 col-md-6 col-lg-6"></div>    
-                <div id="quote-with-person" class="col-sm-6 col-md-6 col-lg-6">
+    <div class="container">
+        <div class="row">
+                <h1 class="col-xs-8 col-sm-8 col-md-8 col-lg-8">Someone once said...</h1>
+        </div>
+        <section>
+            <div class="row">
+                <button id="getQuote">Said what???</button>
+            </div>
+            <div class="row" id="row">    
+                <div id="quote-with-person" class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
                     <p id="quote"></p>
                     <p id="person"></p>
                 </div>
             </div>
-        </div>
-        
-        <button id="getPerson"></button>
-    <section>
+            <div class="row">
+                <button id="getPerson"></button>
+            </div>
+            <div id="description" class="row">
+            </div>
+        <section>
+    </div>
 </body>
 </html>
