@@ -34,22 +34,23 @@
 
             $("#getPerson").click(() => {
                 let name = document.getElementById("person").innerHTML.replace(/\s/g, "%20");
-                let req = new XMLHttpRequest(),
-                    method = "GET",
-                    url = `https://en.wikipedia.org/w/api.php?origin=https://kchylee.github.io/&action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
-                req.open(method, url, true);
-                req.onreadystatechange = () => {
-                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                        let resObj = JSON.parse(req.responseText).query.pages;
-                        let key = Object.keys(resObj)[0];
-                        $("#wikiImage").attr("src", resObj.key.thumbnail.source);
-                        $("#description").html(resObj.key.terms.description[0]);
-                        $("#wiki").css("display", "block");
-                    }else{
-                        $("#description").html(req.status);
-                    }
-                };
-                req.send()  
+                window.location.replace("https://en.wikipedia.org/wiki/" + name);
+                // let req = new XMLHttpRequest(),
+                //     method = "GET",
+                //     url = `https://en.wikipedia.org/w/api.php?origin=https://kchylee.github.io/&action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
+                // req.open(method, url, true);
+                // req.onreadystatechange = () => {
+                //     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
+                //         let resObj = JSON.parse(req.responseText).query.pages;
+                //         let key = Object.keys(resObj)[0];
+                //         $("#wikiImage").attr("src", resObj.key.thumbnail.source);
+                //         $("#description").html(resObj.key.terms.description[0]);
+                //         $("#wiki").css("display", "block");
+                //     }else{
+                //         $("#description").html(req.status);
+                //     }
+                // };
+                // req.send()  
             })
         })
     </script>
