@@ -17,7 +17,7 @@
                 req.open(method, url, true);
                 req.onreadystatechange = () => {
                     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                        let resObj = JSON.parse(req.responseText[0]);
+                        let resObj = JSON.parse(req.responseText)[0];
                         $("#quote").html(resObj.content);
                         $("#person").html(resObj.title);
                         $("#row").css("display", "block");
