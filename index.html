@@ -33,8 +33,8 @@
             })
 
             $("#getPerson").click(() => {
-                let name = document.getElementById("person").innerHTML.replace(/\s/g, "%20");
-                window.location.replace("https://en.wikipedia.org/wiki/" + name);
+                let name = document.getElementById("person").innerHTML.replace(/\s/g, "+");
+                window.location.href = "https://www.google.ca/#q=" + name;
                 // let req = new XMLHttpRequest(),
                 //     method = "GET",
                 //     url = `https://en.wikipedia.org/w/api.php?origin=https://kchylee.github.io/&action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
