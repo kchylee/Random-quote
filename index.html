@@ -38,7 +38,7 @@
                 let name = document.getElementById("person").innerHTML.replace(/\s/g, "%20");
                 let req = new XMLHttpRequest(),
                     method = "GET",
-                    url = `https://en.wikipedia.org/w/api.php?origin=https://kchylee.github.io/Random-quote/&action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
+                    url = `https://en.wikipedia.org/w/api.php?origin=https://kchylee.github.io/&action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
                 req.open(method, url, true);
                 req.onreadystatechange = () => {
                     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
