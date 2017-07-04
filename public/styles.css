@@ -48,3 +48,12 @@ h1 {
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
 }
+
+#wiki {
+    display: none;
+    border: solid #cfcfc4 0.1em;
+    border-radius: 0.5em;
+    background-color: #cfcfc4;
+    font-family: Bungee, sans-serif;
+    font-size: 1.5em;
+}

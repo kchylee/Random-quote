@@ -10,7 +10,7 @@
     <script>
         $(document).ready(() => {
             $("#getQuote").click(() => {
-                $("#row").css("display", "block");
+                
                 let firstName;
                 let req = new XMLHttpRequest(),
                     method = "GET",
@@ -22,6 +22,7 @@
                         let resObj = JSON.parse(req.responseText);
                         $("#quote").html(resObj.quote);
                         $("#person").html(resObj.author);
+                        $("#row").css("display", "block");
                         firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');                       
                         window.setTimeout(()=>{
                             $("#getPerson").css("display", "block").html(firstName + " who???");
@@ -37,13 +38,15 @@
                 let name = document.getElementById("person").innerHTML.replace(/\s/g, "%20");
                 let req = new XMLHttpRequest(),
                     method = "GET",
-                    url = `https://en.wikipedia.org/w/api.php?action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=100`;
+                    url = `https://en.wikipedia.org/w/api.php?action=query&prop=pageimages|pageterms&titles=${name}&pithumbsize=300`;
                 req.open(method, url, true);
                 req.onreadystatechange = () => {
                     if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
                         let resObj = JSON.parse(req.responseText).query.pages;
                         let key = Object.keys(resObj)[0];
-                        $("#description").html("<img src=resObj.key.thumbnail.source><div>resObj.key.terms.description[0]</div>");
+                        $("#wikiImage").attr("src", resObj.key.thumbnail.source);
+                        $("#description").html(resObj.key.terms.description[0]);
+                        $("#wiki").css("display", "block");
                     }else{
                         $("#description").html(req.status);
                     }
@@ -71,7 +74,9 @@
             <div class="row">
                 <button id="getPerson"></button>
             </div>
-            <div id="description" class="row">
+            <div id="wiki" class="row">
+                <img id="wikiImage">
+                <div id="description"></div>
             </div>
         <section>
     </div>
