@@ -9,6 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(() => {
+            $("#getQuote").hover(() => {
+                $("#getQuote").animate({"font-size": "1.6em"}, 100);
+            }, () => { 
+                $("#getQuote").animate({"font-size": "1.5em"}, 100);
+            });
+
+
             $("#getQuote").click(() => {
                 let firstName;
                 let req = new XMLHttpRequest(),
@@ -32,6 +39,12 @@
                 };
                 req.send()
             })
+
+            $("#getPerson").hover(() => {
+                $("#getPerson").animate({"font-size": "1.6em"}, 100);
+            }, () => { 
+                $("#getPerson").animate({"font-size": "1.5em"}, 100);
+            });
 
             $("#getPerson").click(() => {
                 let name = document.getElementById("person").innerHTML.replace(/\s/g, "+");

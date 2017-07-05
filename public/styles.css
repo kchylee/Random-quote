@@ -1,7 +1,11 @@
-h1 {
-    border: solid #cfcfc4 0.1em;
-    border-radius: 0.5em;
+body {
     background-color: #cfcfc4;
+}
+
+h1 {
+    border: solid #e7e7e2 0.1em;
+    border-radius: 0.5em;
+    background-color: #e7e7e2;
     font-family: Bungee, sans-serif;
     font-size: 4em;
 }
@@ -9,24 +13,24 @@ h1 {
 #getQuote {
     display: block;
     float: right;
-    border: solid white 0.1em;
+    border: solid #222 0.1em;
     border-radius: 0.5em;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
-    color: #cfcfc4;
+    color: #e7e7e2;
     outline: none;
 }
 
 #getPerson {
     display: none;
     float: right;
-    border: solid white 0.1em;
+    border: solid #222 0.1em;
     border-radius: 0.5em;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
-    color: #cfcfc4;
+    color: #e7e7e2;
     outline: none;
 }
 
@@ -42,18 +46,9 @@ h1 {
     display: none;
 }
 #quote-with-person {
-    border: solid #cfcfc4 0.1em;
+    border: solid #e7e7e2 0.1em;
     border-radius: 0.5em;
-    background-color: #cfcfc4;
-    font-family: Bungee, sans-serif;
-    font-size: 1.5em;
-}
-
-#wiki {
-    display: none;
-    border: solid #cfcfc4 0.1em;
-    border-radius: 0.5em;
-    background-color: #cfcfc4;
+    background-color: #e7e7e2;
     font-family: Bungee, sans-serif;
     font-size: 1.5em;
 }
