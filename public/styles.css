@@ -5,9 +5,13 @@ body {
     margin-right: 17vw;
 }
 
+section {
+    background-color: #f3f3f0;
+}
+
 .messages {
     height: 50vh;
-    overflow: scroll;   
+    overflow: scroll;
 }
 
 h1 {
@@ -36,8 +40,6 @@ h1:before{
 }
 
 #getQuote {
-    display: block;
-    float: right;
     border: solid #222 0.1em;
     border-radius: 0.5em;
     margin-bottom: 2vh;
@@ -66,7 +68,6 @@ h1:before{
 
 #getPerson {
     display: none;
-    float: right;
     border: solid #222 0.1em;
     border-radius: 0.5em;
     margin-bottom: 2vh;
@@ -130,9 +131,10 @@ h1:before{
 
 #kb {
     position: fixed;
-    bottom: 2vh;
+    bottom: 0;
+    height: 50vh;
     clear: both;
-    background-color: #cfcfc4;
+    background-color: #f3f3f0;
 }
 
 #write {
@@ -141,8 +143,8 @@ h1:before{
     width: 65.5vw;
     height: 5vh;
     font: 1em/1.5 Helvetica, Sans-Serif;
-    background: #cfcfc4;
-    border: 0.5em solid #cfcfc4;
+    background-color: #f3f3f0;
+    border: 0.5em solid #f3f3f0;
     border-bottom: 0.1em solid #222;
     outline: none;
 }
@@ -157,15 +159,14 @@ h1:before{
     float: left;
     background-color: #222;
     color: #e7e7e2;
-    margin: 0 0.5vw 0.5vw 0;
+    margin: 0.25vw 0.25vw 0.25vw 0.25vw;
     width: 4vw;
     height: 4vw;
     line-height: 4vw;
     font-size: 1.5vw;
     text-align: center;
     border: 1px solid #222;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-radius: 0.5em;
 }
 .capslock, .tab, .left-shift {
     clear: left;
@@ -177,7 +178,7 @@ h1:before{
     width: 8vw;
 }
 #keyboard .return {
-    width: 7.4vw;
+    width: 7.5vw;
 }
 #keyboard .left-shift {
     width: 9.5vw;

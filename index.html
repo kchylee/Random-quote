@@ -7,66 +7,10 @@
     <link rel="stylesheet" href="./public/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(() => {
-            $("#getQuote").hover(() => {
-                $("#getQuote").animate({"font-size": "2.1vw"}, 100);
-            }, () => { 
-                $("#getQuote").animate({"font-size": "2vw"}, 100);
-            });
-
-            $("#getQuote").click(() => {
-                $("#getPerson").css("display", "none");
-                let firstName;
-                let req = new XMLHttpRequest(),
-                    method = "GET",
-                    url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
-                req.open(method, url, true);
-                req.setRequestHeader("X-Mashape-Key", "rvDRHtqfpxmsh3Vrk3SdZRPd6aUop1lXt5fjsnNrDvbdJnVPhU");
-                req.onreadystatechange = () => {
-                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                        let resObj = JSON.parse(req.responseText);
-                        $("#quote").html(resObj.quote);
-                        $("#person").html(resObj.author);
-                        $("#quote-with-person").css("display", "block");
-                        $(".messages").scrollTop(1000);
-                        firstName = resObj.author.replace(/(\w+)(\s.+)+/, '$1');                       
-                        window.setTimeout(()=>{
-                            $("#getPerson").css("display", "block").html(firstName + " who???");
-                            $(".messages").scrollTop(1000);
-                        }, 2000);
-                        // if(scrollAtBottom(document.getElementsByClassName("messages"))){
-                        //     updateScroll(document.getElementsByClassName("messages"));
-                        // }
-                    }else{
-                        $("#quote").html(req.status);
-                    }
-                };
-                req.send()
-            })
-
-            $("#getPerson").hover(() => {
-                $("#getPerson").animate({"font-size": "2.1vw"}, 100);
-            }, () => { 
-                $("#getPerson").animate({"font-size": "2vw"}, 100);
-            });
-
-            $("#getPerson").click(() => {
-                let name = document.getElementById("person").innerHTML.replace(/\s/g, "+");
-                window.location.href = "https://www.google.ca/#q=" + name;
-            })
-
-            let updateScroll = (el) => {
-                el.scrollTop = el.scrollHeight;
-            }
-            
-            let scrollAtBottom = (el) => {
-                return (el.scrollTop + 5 >= (el.scrollHeight - el.offsetHeight));
-            }
-        })
-    </script>
+    <script src="./index.js"></script>
 </head>
 <body>
+    <section>
         <div class="messages">
             <h1 class=>Someone once said...</h1>
             <button id="getQuote">Said what???</button>
@@ -77,7 +21,7 @@
             <button id="getPerson"></button>
         </div>
         <div id="kb">
-            <textarea id="write" rows="6" cols="60"></textarea>
+            <p id="write" rows="6" cols="60"></p>
             <ul id="keyboard">
                 <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
                 <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
@@ -135,5 +79,6 @@
                 <li class="space lastitem">&nbsp;</li>
             </ul>
         </div>
+    </section>
 </body>
 </html>
