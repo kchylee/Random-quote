@@ -10,9 +10,9 @@
     <script>
         $(document).ready(() => {
             $("#getQuote").hover(() => {
-                $("#getQuote").animate({"font-size": "1.6em"}, 100);
+                $("#getQuote").animate({"font-size": "2.1vw"}, 100);
             }, () => { 
-                $("#getQuote").animate({"font-size": "1.5em"}, 100);
+                $("#getQuote").animate({"font-size": "2vw"}, 100);
             });
 
             $("#getQuote").click(() => {
@@ -40,9 +40,9 @@
             })
 
             $("#getPerson").hover(() => {
-                $("#getPerson").animate({"font-size": "1.6em"}, 100);
+                $("#getPerson").animate({"font-size": "2.1vw"}, 100);
             }, () => { 
-                $("#getPerson").animate({"font-size": "1.5em"}, 100);
+                $("#getPerson").animate({"font-size": "2vw"}, 100);
             });
 
             $("#getPerson").click(() => {
@@ -70,6 +70,7 @@
             <div class="row">
                 <button id="getPerson"></button>
             </div>
+            <div class="empty"></div>
             
             <div id="kb">
                 <textarea id="write" rows="6" cols="60"></textarea>
