@@ -1,14 +1,26 @@
+
 body {
     background-color: #cfcfc4;
+    margin-left: 17vw;
+    margin-right: 17vw;
+}
+
+.messages {
+    height: 50vh;
+    overflow: scroll;   
 }
 
 h1 {
     border: solid #e7e7e2 0.1em;
     border-radius: 0.5em;
+    margin-bottom: 2vh;
     background-color: #e7e7e2;
     font-family: Bungee, sans-serif;
     font-size: 5vw;
     position: relative;
+    left: 2vw;
+    float: left;
+    clear: both;
 }
 
 h1:before{
@@ -28,12 +40,16 @@ h1:before{
     float: right;
     border: solid #222 0.1em;
     border-radius: 0.5em;
+    margin-bottom: 2vh;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 2vw;
     color: #e7e7e2;
     outline: none;
     position: relative;
+    right: 2vw;
+    float: right;
+    clear: both;
 }
 
 #getQuote:before {
@@ -53,12 +69,16 @@ h1:before{
     float: right;
     border: solid #222 0.1em;
     border-radius: 0.5em;
+    margin-bottom: 2vh;
     background-color: #222;
     font-family: Bungee, sans-serif;
     font-size: 2vw;
     color: #e7e7e2;
     outline: none;
     position: relative;
+    right: 2vw;
+    float: right;
+    clear: both;
 }
 
 #getPerson:before {
@@ -81,16 +101,19 @@ h1:before{
     text-align: right;
 }
 
-#row {
-    display: none;
-}
 #quote-with-person {
+    display: none;
     border: solid #e7e7e2 0.1em;
     border-radius: 0.5em;
+    width: 40vw;
+    margin-bottom: 2vh;
     background-color: #e7e7e2;
     font-family: Bungee, sans-serif;
     font-size: 2vw;
     position: relative;
+    left: 2vw;
+    float: left;
+    clear: both;
 }
 
 #quote-with-person:before {
@@ -107,7 +130,9 @@ h1:before{
 
 #kb {
     position: fixed;
-    left: 17.25vw;
+    bottom: 2vh;
+    clear: both;
+    background-color: #cfcfc4;
 }
 
 #write {
@@ -119,8 +144,6 @@ h1:before{
     background: #cfcfc4;
     border: 0.5em solid #cfcfc4;
     border-bottom: 0.1em solid #222;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     outline: none;
 }
 
@@ -129,6 +152,7 @@ h1:before{
     padding: 0;
     list-style: none;
 }
+
 #keyboard li {
     float: left;
     background-color: #222;
@@ -137,6 +161,7 @@ h1:before{
     width: 4vw;
     height: 4vw;
     line-height: 4vw;
+    font-size: 1.5vw;
     text-align: center;
     border: 1px solid #222;
     -moz-border-radius: 5px;
