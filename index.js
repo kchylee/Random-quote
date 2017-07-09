@@ -1,9 +1,19 @@
 $(document).ready(() => {
-    $("#getQuote").hover(() => {
-        $("#getQuote").animate({"font-size": "2.1vw"}, 100);
-    }, () => { 
-        $("#getQuote").animate({"font-size": "2vw"}, 100);
-    });
+    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+    if(!isMobile){
+        $("#getQuote").hover(() => {
+            $("#getQuote").animate({"font-size": "2.1vw"}, 100);
+        }, () => { 
+            $("#getQuote").animate({"font-size": "2vw"}, 100);
+        });
+
+        $("#getPerson").hover(() => {
+            $("#getPerson").animate({"font-size": "2.1vw"}, 100);
+        }, () => { 
+            $("#getPerson").animate({"font-size": "2vw"}, 100);
+        });
+    }
+    
 
     $("#getQuote").click(() => {
         $("#getPerson").css("display", "none");
@@ -32,11 +42,7 @@ $(document).ready(() => {
         req.send()
     })
 
-    $("#getPerson").hover(() => {
-        $("#getPerson").animate({"font-size": "2.1vw"}, 100);
-    }, () => { 
-        $("#getPerson").animate({"font-size": "2vw"}, 100);
-    });
+    
 
     $("#getPerson").click(() => {
         let name = document.getElementById("person").innerHTML.replace(/\s/g, "+");

@@ -5,12 +5,16 @@ body {
     margin-right: 17vw;
 }
 
+header {
+    display: none;
+}
+
 section {
     background-color: #f3f3f0;
 }
 
 .messages {
-    height: 50vh;
+    height: 54vh;
     overflow: scroll;
 }
 
@@ -129,10 +133,12 @@ h1:before{
     border-bottom: 0.45em solid transparent;
 }
 
+
+
 #kb {
     position: fixed;
     bottom: 0;
-    height: 50vh;
+    /*height: 46vh;*/
     clear: both;
     background-color: #f3f3f0;
 }
@@ -153,6 +159,7 @@ h1:before{
     margin: 0;
     padding: 0;
     list-style: none;
+    height: 41vh;
 }
 
 #keyboard li {
@@ -198,4 +205,118 @@ h1:before{
 }
 .on {
     display: none;
+}
+
+#mkb {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    clear: both;
+    background-color: #f3f3f0;
+}
+
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+      body{
+          margin-left: 0;
+          margin-right: 0;
+      }
+
+      header {
+          display: block;
+          height: 10vh;
+          font-family: Bungee, helvetica, sans-serif;
+          font-size: 10vw;
+          text-shadow: -1px 0 #e7e7e2, 0 1px #e7e7e2, 1px 0 #e7e7e2, 0 -1px #e7e7e2;
+          color: #222;
+          text-align: center;
+      }
+
+      .messages {
+          height: 65vh;
+      }
+
+      h1{
+          font-size: 7.5vw;
+          left: 3vw;
+      }
+
+      #quote-with-person {
+          left: 5vw;
+          width: 75vw;
+      }
+
+      #getQuote, #getPerson, #quote-with-person {
+          font-size: 6vw;
+      }
+
+      #getQuote, #getPerson {
+          right: 5vw;
+      }
+
+      #kb {
+          display: none;
+      }
+
+      #mkb {
+          display: block;
+      }
+
+      #mkeyboard {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          height: 25vh;
+          
+      }
+
+    #mkeyboard li {
+        float: left;
+        background-color: #222;
+        color: #e7e7e2;
+        margin: 0.5vw 0.5vw 0.5vw 0.5vw;
+        width: 9vw;
+        height: 9vw;
+        line-height: 9vw;
+        font-size: 6vw;
+        text-align: center;
+        border: 1px solid #222;
+        border-radius: 0.5em;
+    }
+
+    #mkeyboard .capslock {
+        width: 14vw;
+    }
+
+    #mkeyboard .space {
+        /*clear: left;*/
+        width: 60vw;
+    }
+
+    #mkeyboard .delete {
+        width: 14vw;
+    }
+
+    #mkeyboard .return {
+        width: 15vw;
+    }
+
+    #mkeyboard #a {
+        margin-left: 5.5vw;
+    }
+
+    #mkeyboard .numbers {
+        width: 15vw;
+        margin-left: 4vw;
+    }
+
+
+
+      
+      
 }
