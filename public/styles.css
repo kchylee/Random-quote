@@ -14,8 +14,9 @@ section {
 }
 
 .messages {
-    height: 54vh;
+    height: 59vh;
     overflow: scroll;
+    margin-bottom: 5vh;
 }
 
 h1 {
@@ -41,6 +42,15 @@ h1:before{
     border-top: 0.25em solid transparent;
     border-right: 0.5em solid #e7e7e2;
     border-bottom: 0.25em solid transparent;
+}
+
+.twitter-share-button {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 3vh;
+    color: #222;
 }
 
 #getQuote {
@@ -104,6 +114,8 @@ h1:before{
 
 #person {
     text-align: right;
+    border-bottom: dashed #222 0.2vw;
+    margin-bottom: 0;
 }
 
 #quote-with-person {
@@ -138,9 +150,9 @@ h1:before{
 #kb {
     position: fixed;
     bottom: 0;
-    /*height: 46vh;*/
     clear: both;
     background-color: #f3f3f0;
+    border-top: 0.2vw solid #222;
 }
 
 #write {
@@ -229,12 +241,11 @@ h1:before{
 
       header {
           display: block;
-          height: 10vh;
           font-family: Bungee, helvetica, sans-serif;
-          font-size: 10vw;
-          text-shadow: -1px 0 #e7e7e2, 0 1px #e7e7e2, 1px 0 #e7e7e2, 0 -1px #e7e7e2;
+          font-size: 5vh;
           color: #222;
           text-align: center;
+          position: relative;
       }
 
       .messages {
@@ -245,6 +256,20 @@ h1:before{
           font-size: 7.5vw;
           left: 3vw;
       }
+
+      #logo {
+          display: inline-block;
+          font-size: 5vh;
+          margin: auto;
+          line-height: 10vh;  
+      }
+
+      /*.fa-twitter {
+          display: inline-block;
+          position: absolute;
+          right: 5vw;
+          top: 2.5vh;
+      }*/
 
       #quote-with-person {
           left: 5vw;
@@ -265,6 +290,7 @@ h1:before{
 
       #mkb {
           display: block;
+          border-top: 0.2vw solid #222;
       }
 
       #mkeyboard {
@@ -303,7 +329,7 @@ h1:before{
     }
 
     #mkeyboard .return {
-        width: 15vw;
+        width: 16vw;
     }
 
     #mkeyboard #a {
@@ -311,7 +337,7 @@ h1:before{
     }
 
     #mkeyboard .numbers {
-        width: 15vw;
+        width: 16vw;
         margin-left: 4vw;
     }
 

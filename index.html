@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <script src="https://use.fontawesome.com/48a35a65fe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./index.js"></script>
 </head>
 <body>
-    <header>QOD</header>
+    <header>
+        <h2 id="logo">QOD</h2>
+        <!--<a class="twitter-share-button"
+  href=""><i class="fa fa-twitter" aria-hidden="true">
+        </i></a>-->
+    </header>
     <section>
         <div class="messages">
             <h1 class=>Someone once said...</h1>
@@ -18,11 +24,13 @@
             <div id="quote-with-person">
                 <p id="quote"></p>
                 <p id="person"></p>
+                <a class="twitter-share-button" href="#"><i class="fa fa-twitter" aria-hidden="true"></i>Tweet quote</a>
             </div>
+            
             <button id="getPerson"></button>
         </div>
         <div id="kb">
-            <p id="write" rows="6" cols="60"></p>
+            <!--<p id="write" rows="6" cols="60"></p>-->
             <ul id="keyboard">
                 <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
                 <li class="symbol"><span class="off">1</span><span class="on">!</span></li>

@@ -42,7 +42,10 @@ $(document).ready(() => {
         req.send()
     })
 
-    
+    $(".twitter-share-button").click(()=>{
+        let tweet = '"' + $("#quote").html() + '" - ' + $("#person").html();
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURI(tweet)}&hashtags=randomquote`, 'popup', 'width=400,height=400');
+    })
 
     $("#getPerson").click(() => {
         let name = document.getElementById("person").innerHTML.replace(/\s/g, "+");
