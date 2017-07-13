@@ -14,9 +14,10 @@ section {
 }
 
 .messages {
+    display: block;
     height: 59vh;
     overflow: scroll;
-    margin-bottom: 5vh;
+    padding-bottom: 5vh;
 }
 
 h1 {
@@ -49,7 +50,7 @@ h1:before{
     margin: auto;
     text-align: center;
     font-family: Helvetica, sans-serif;
-    font-size: 3vh;
+    font-size: 2vw;
     color: #222;
 }
 
@@ -148,14 +149,15 @@ h1:before{
 
 
 #kb {
-    position: fixed;
-    bottom: 0;
+    display: block;
+    position: relative;
+    /*bottom: 0;*/
     clear: both;
     background-color: #f3f3f0;
-    border-top: 0.2vw solid #222;
+    height: 41vh;
 }
 
-#write {
+/*#write {
     margin: 0 0 0.5em 0;
     padding: 0.5em;
     width: 65.5vw;
@@ -165,13 +167,17 @@ h1:before{
     border: 0.5em solid #f3f3f0;
     border-bottom: 0.1em solid #222;
     outline: none;
-}
+}*/
+
 
 #keyboard {
     margin: 0;
     padding: 0;
+    border-top: 0.2vw solid #222;
     list-style: none;
-    height: 41vh;
+    /*height: 41vh;*/
+    position: absolute;
+    bottom: 0;
 }
 
 #keyboard li {
@@ -239,18 +245,8 @@ h1:before{
           margin-right: 0;
       }
 
-      header {
-          display: none;
-          font-family: Bungee, helvetica, sans-serif;
-          font-size: 5vh;
-          color: #222;
-          text-align: center;
-          position: relative;
-      }
-
       .messages {
-          height: 75vh;
-          margin-bottom: 0;
+          height: 77vh;
       }
 
       h1{
@@ -265,19 +261,12 @@ h1:before{
           line-height: 10vh;  
       }
 
-      /*.fa-twitter {
-          display: inline-block;
-          position: absolute;
-          right: 5vw;
-          top: 2.5vh;
-      }*/
-
       #quote-with-person {
           left: 5vw;
           width: 75vw;
       }
 
-      #getQuote, #getPerson, #quote-with-person {
+      #getQuote, #getPerson, #quote-with-person, .twitter-share-button {
           font-size: 6vw;
       }
 
@@ -298,9 +287,7 @@ h1:before{
       #mkeyboard {
           margin: 0;
           padding: 0;
-          list-style: none;
-          height: 25vh;
-          
+          list-style: none;          
       }
 
     #mkeyboard li {
