@@ -240,7 +240,7 @@ h1:before{
       }
 
       header {
-          display: block;
+          display: none;
           font-family: Bungee, helvetica, sans-serif;
           font-size: 5vh;
           color: #222;
@@ -249,7 +249,7 @@ h1:before{
       }
 
       .messages {
-          height: 65vh;
+          height: 75vh;
       }
 
       h1{
@@ -291,6 +291,7 @@ h1:before{
       #mkb {
           display: block;
           border-top: 0.2vw solid #222;
+          background-color: #cfcfc4;
       }
 
       #mkeyboard {
