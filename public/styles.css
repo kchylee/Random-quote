@@ -250,6 +250,7 @@ h1:before{
 
       .messages {
           height: 75vh;
+          margin-bottom: 0;
       }
 
       h1{
