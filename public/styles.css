@@ -247,6 +247,7 @@ h1:before{
 
       .messages {
           height: 77vh;
+          padding-bottom: 5vh;
       }
 
       h1{
@@ -282,6 +283,7 @@ h1:before{
           display: block;
           border-top: 0.2vw solid #222;
           background-color: #cfcfc4;
+          height: 23vh;
       }
 
       #mkeyboard {
